@@ -1,0 +1,19 @@
+version: '1'
+
+services:
+  
+  assets:
+    image: vivaconagua/assets:latest
+    build: .
+    container_name: assets
+    restart: unless-stopped
+    volumes: 
+      - ./volumes/assets/files/:/public/files/
+    networks:
+      default:
+        ipv4_address: 172.2.0.100
+
+networks:
+  default:
+    external:
+      name: pool-network
