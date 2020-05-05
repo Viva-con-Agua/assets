@@ -2,8 +2,8 @@ FROM golang
 
 RUN go get github.com/labstack/echo/...
 
-WORKDIR /app
+WORKDIR /go/src
 
-ADD . /app
+ADD . /go/src
 
 CMD ["go", "run", "server.go"]
